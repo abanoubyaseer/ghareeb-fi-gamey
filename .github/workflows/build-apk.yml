@@ -13,10 +13,12 @@ jobs:
         with:
           flutter-version: '3.24.0'
           channel: 'stable'
-      - run: flutter create --project-name ghareeb_fi_gamey --org com.ghareeb.gamey --platforms android .
-      - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter create --project-name ghareeb_fi_gamey --org com.ghareeb.gamey --platforms android fresh_app
+      - run: cp -r lib fresh_app/lib
+      - run: cp pubspec.yaml fresh_app/pubspec.yaml
+      - run: cd fresh_app && flutter pub get
+      - run: cd fresh_app && flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
           name: ghareeb-app
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: fresh_app/build/app/outputs/flutter-apk/app-release.apk
