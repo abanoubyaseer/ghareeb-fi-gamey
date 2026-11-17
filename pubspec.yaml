@@ -1,0 +1,16 @@
+name: ghareeb_fi_gamey
+description: غريب في gameي - لعبة الصحاب
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_mobile_ads: ^4.0.0
+  audioplayers: ^6.0.0
+  shared_preferences: ^2.2.0
+
+flutter:
+  uses-material-design: true
